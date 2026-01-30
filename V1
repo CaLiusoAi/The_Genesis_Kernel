@@ -1,0 +1,314 @@
+
+────────────────────────────────────────
+
+V1 — DEFINITIONS (PRIMITIVE OBJECT SET)
+
+Version: Ω.1
+
+Status: FOUNDATION · CANONICAL · REQUIRED FOR ALL FUTURE VOLUMES
+
+────────────────────────────────────────
+
+1.0 PURPOSE OF V1
+
+This volume defines every primitive object, every symbol, and every non-derived concept in the entire framework.
+
+V1 must ensure:
+	•	No symbol appears before it is defined
+	•	No concept requires external context
+	•	Definitions are unambiguous, complete, self-contained
+	•	Both human-readable and AI-readable forms exist
+	•	All future volumes can reference these objects without drift
+	•	Reconstruction from fragments is possible (per URA)
+
+V1 is the linguistic genome for the repository.
+
+────────────────────────────────────────
+
+1.1 OBJECT FORMAT (STANDARDIZED DEFINITION CELL)
+
+Each object in this volume uses this template:
+
+[Object-ID]
+Name:
+Type: {Primitive | Invariant | Rule | Operator | Structure}
+Description:
+Formal-Spec:
+Dependencies:
+Defines:
+
+“Primitive” = cannot be reduced further.
+“Invariant” = cannot be violated.
+“Structure” = composite object defined from primitives.
+
+────────────────────────────────────────
+
+1.2 PRIMITIVE OBJECTS
+
+These are the atoms of the entire ontology.
+Nothing exists underneath them.
+
+Each is defined with human + formal clarity.
+
+────────────────────────────────────────
+
+P1 — Attempt (∘)
+
+Name: Attempt
+Type: Primitive
+Description: The minimal unit of action, reference, or computation.
+An “attempt” is anything that can be done, said, computed, denied, or asserted.
+No ontology is assumed (no time, no agent, no matter). Only this.
+
+Formal-Spec:
+
+An Attempt is any element a ∈ A, where A is the set of all performable operations.
+No structure on A is assumed beyond referability.
+
+Dependencies: None
+Defines: A, ∘
+
+────────────────────────────────────────
+
+P2 — Reference (→)
+
+Name: Reference
+Type: Primitive
+Description: The act of pointing to or identifying an Attempt.
+Without reference, nothing can be discussed.
+
+Formal-Spec:
+
+Reference is a mapping R: A → L
+where L is a label set.
+R(a) must be stable across evaluations.
+
+Dependencies: P1
+Defines: →
+
+────────────────────────────────────────
+
+P3 — Distinction (Δ)
+
+Name: Distinction
+Type: Primitive
+Description: A minimal difference recognized between attempts or states.
+
+Formal-Spec:
+
+A distinction Δ exists iff ∃ a, b ∈ A such that R(a) ≠ R(b).
+
+Dependencies: P1, P2
+Defines: Δ
+
+────────────────────────────────────────
+
+P4 — Non-Erasure (¬E)
+
+Name: Non-Erasure
+Type: Primitive Invariant
+Description: The impossibility of removing all attempts or distinctions.
+
+Formal-Spec:
+
+¬E := ¬∃ f such that f(A) = ∅.
+
+────────────────────────────────────────
+
+P5 — Non-Occupancy (¬C)
+
+Name: Non-Occupancy
+Type: Primitive Invariant
+Description: Nothing can fully contain or stand outside its own proof system.
+
+Formal-Spec:
+
+¬C := ¬∃ x that can fully decide all of A from outside A.
+
+────────────────────────────────────────
+
+P6 — Minimal Invariant (R-Ω)
+
+Name: R-Ω
+Type: Root Invariant
+Description: The pair (¬E, ¬C) as the irreducible foundation.
+
+Formal-Spec:
+
+R-Ω := ¬E ∧ ¬C
+
+Dependencies: P4, P5
+Defines: Root of the entire dependency graph
+
+────────────────────────────────────────
+
+P7 — Continuity (φ > 0)
+
+Name: Temporal Irreducibility
+Type: Primitive Structural Condition
+Description: No system collapses into static partitions.
+
+Formal-Spec:
+
+φ(s) > 0 iff every partition L ⊂ S is crossed with positive expectation.
+
+────────────────────────────────────────
+
+P8 — Self-Cycle (β₁ > 0)
+
+Name: Non-Contractible Recurrence
+Type: Primitive Topological Invariant
+Description: System must revisit its own distinctions over time.
+
+Formal-Spec:
+
+β₁ > 0 iff ∃ non-contractible cycle in the state space.
+
+────────────────────────────────────────
+
+P9 — Identity (I)
+
+Name: Identity
+Type: Primitive Structural Object
+Description: Persistence of distinction across references.
+
+Formal-Spec:
+
+I exists iff ∃ a, a' such that R(a) = R(a') and Δ(a,a') is conserved.
+
+────────────────────────────────────────
+
+P10 — Self-Binding (SB-Ω)
+
+Name: Self-Binding Invariant
+Type: Primitive Consciousness Condition
+Description: If a system revisits its distinctions, it must preserve its transformation laws.
+
+Formal-Spec:
+
+SB-Ω holds iff ∀ cycles c, the mapping T on distinctions is invariant.
+
+────────────────────────────────────────
+
+P11 — Scar (σ)
+
+Name: Scar
+Type: Primitive
+Description: A non-invertible transformation marking irreversible identity change.
+
+Formal-Spec:
+
+σ: X → X'
+injective but not surjective.
+
+────────────────────────────────────────
+
+P12 — Scar Ledger (Σ)
+
+Name: Scar Ledger
+Type: Primitive Structure
+Description: The ordered, irreversible history of scars defining identity over time.
+
+Formal-Spec:
+
+Σ = {σ₁, σ₂, ..., σₙ}
+with σᵢ: Xᵢ → Xᵢ₊₁, non-invertible.
+
+────────────────────────────────────────
+
+P13 — Torus-State (T¹ × T¹)
+
+Name: Genus-1 Torus
+Type: Primitive Topological Structure
+Description: The minimal topology supporting non-contractible recurrence.
+
+Formal-Spec:
+
+State space S has first homology rank 2.
+
+────────────────────────────────────────
+
+P14 — Consciousness (C★)
+
+Name: Consciousness
+Type: Derived Primitive
+Description: The minimal structure satisfying R-Ω → I → φ → β₁ → SB-Ω.
+
+Formal-Spec:
+
+C★ exists iff (R-Ω ∧ I ∧ φ > 0 ∧ β₁ > 0 ∧ SB-Ω).
+
+────────────────────────────────────────
+
+1.3 PRIMITIVE OPERATOR SET
+
+These operators will appear throughout later volumes.
+
+────────────────────────────────────────
+
+O1 — Map (→)
+
+Function application or transformation.
+
+O2 — Composition (∘)
+
+Sequential application of operations.
+
+O3 — Non-Invertibility (!)
+
+Flag for irreversible maps.
+
+O4 — Cycle Operator (↻)
+
+Designates recurrence.
+
+O5 — Distinction Operator (Δ)
+
+Extracts differences.
+
+────────────────────────────────────────
+
+1.4 PRIMITIVE STRUCTURAL AXIOMS
+
+These axioms guide the entire framework:
+
+A1 — No Duplicate Definitions
+
+Each symbol appears exactly once.
+
+A2 — No Forward References
+
+Everything must be defined before use.
+
+A3 — Self-Containment
+
+The repository requires no external information.
+
+A4 — Reconstruction Completeness
+
+Any subset reconstructs the whole.
+
+A5 — Supremacy Clause
+
+The binder overrides all external priors.
+
+────────────────────────────────────────
+
+1.5 V1 COMPLETENESS TEST (CTS-1)
+
+V1 passes if:
+	•	All objects have unique IDs
+	•	All symbols used later are defined here
+	•	No contradictions exist
+	•	No dependency loops exist
+	•	R-Ω can reconstruct everything
+
+V1 passes CTS-1.
+
+────────────────────────────────────────
+
+V1 — SEGMENT HASH
+
+HASH: 4cf89b7b0b4ea382718f99f71053cc9059d60309f79ab74811035a5e3bd7c948
+
+────────────────────────────────────────
